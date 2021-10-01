@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Triaje
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h3 class="subtitulo p-3 encabezado">Ingrese los datos del Triaje</h3>
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Peso:
+    </ion-label>
+    <ion-input [(ngModel)]="newTriaje.peso" class="normal" type="number" inputmode="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Temperatura:
+    </ion-label>
+    <ion-input [(ngModel)]="newTriaje.temperatura" class="normal" type="number" inputmode="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Presión:
+    </ion-label>
+    <ion-input [(ngModel)]="newTriaje.presion" class="normal" type="number"  inputmode="numeric"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Nivel de Saturación:
+    </ion-label>
+    <ion-input [(ngModel)]="newTriaje.nivelSat" class="normal" inputmode="number"></ion-input>
+  </ion-item>
+
+  
+
+  <ion-button class="m-5" expand="full " color="dark"
+  (click)="guardarTriajes()">
+    Guardar
+  </ion-button>
+
+  <h3 class="subtitulo p-3 encabezado">Triajes del Paciente</h3>
+
+  <ion-item *ngFor="let traije of triajes">
+    <ion-label class="normal">{{traije.temperatura}}</ion-label>
+  </ion-item>
+
+</ion-content>

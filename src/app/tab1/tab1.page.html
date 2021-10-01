@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pacientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h3 class="subtitulo p-3 encabezado">Ingrese los datos del Paciente</h3>
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Nombres y Apellidos:
+    </ion-label>
+    <ion-input [(ngModel)]="newPaciente.nombre" class="normal" type="text" inputmode="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Fecha de Nacimiento:
+    </ion-label>
+    <ion-input [(ngModel)]="newPaciente.fechaNac" class="normal" type="text" inputmode="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Estatura:
+    </ion-label>
+    <ion-input [(ngModel)]="newPaciente.estatura" class="normal" type="number"  inputmode="numeric"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal " position="floating">
+      Dirección:
+    </ion-label>
+    <ion-input [(ngModel)]="newPaciente.direccion" class="normal" inputmode="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal">
+      Ubicación GPS:
+    </ion-label>
+    <ion-button>
+      <ion-icon name="navigate-outline"></ion-icon>
+    </ion-button>
+    
+  </ion-item>
+
+  <ion-button class="m-5" expand="full " color="dark"
+  (click)="guardarPaciente()">
+    Guardar
+  </ion-button>
+
+  <h3 class="subtitulo p-3 encabezado">Pacientes Registrados</h3>
+
+  <ion-item *ngFor="let paciente of pacientes">
+    <ion-label class="normal">{{paciente.nombre}}</ion-label>
+  </ion-item>
+
+
+  
+</ion-content>
